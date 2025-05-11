@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body:has(.main-layout) {
+  background-color: rgb(191, 224, 207);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Дополнительные стили для кнопки "Наверх" */
+.back-to-top {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Оптимизация для устройств с prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
