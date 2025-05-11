@@ -38,7 +38,7 @@ const emit = defineEmits(['openDrawer'])
         <b>{{ totalPrice.toLocaleString('ru-RU') }} руб.</b>
       </li>
 
-      <router-link to="/catalog" v-if="$route.path !== '/catalog'">
+      <router-link to="/catalog" v-if="$route.path == '/privacy'">
         <li
           class="flex items-center cursor-pointer gap-2 md:gap-3 text-gray-500 hover:text-black text-sm md:text-base"
         >
