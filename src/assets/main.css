@@ -8,6 +8,7 @@ body:has(.main-layout) {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /* Дополнительные стили для кнопки "Наверх" */
