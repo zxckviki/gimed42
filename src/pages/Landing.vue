@@ -167,7 +167,7 @@
             <h3 class="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-3 text-center">
               Стабильная поставка
             </h3>
-            <p class="text-[#4c4c4c] text-center text-sm sm:text-base md:text-lg ">
+            <p class="text-[#4c4c4c] text-center text-sm sm:text-base md:text-lg">
               Мы гарантируем своим клиентам быструю и надежную поставку дезинфицирующих средств,
               медицинских расходных материалов и оборудования.
             </p>

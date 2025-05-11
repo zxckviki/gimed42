@@ -11,13 +11,12 @@ const emit = defineEmits(['openDrawer'])
     class="flex flex-col md:flex-row justify-between border-b border-slate-200 px-4 py-4 md:px-10 md:py-8"
   >
     <!-- Логотип и название - центрируем на мобильных -->
-    <div class="flex items-center gap-2 md:gap-4">
+    <div class="flex items-center justify-center md:justify-start gap-2 md:gap-4">
       <img src="/logo2.png" alt="Logo" class="w-12 md:w-20" />
       <div>
         <h2 class="text-xl md:text-3xl font-bold uppercase">ГИМЕД</h2>
       </div>
     </div>
-
     <!-- Ссылки на разделы - увеличиваем расстояние между ними на мобильных -->
     <ul class="flex flex-wrap justify-center md:justify-end items-center gap-4 md:gap-10">
       <router-link to="/">
