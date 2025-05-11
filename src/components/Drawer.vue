@@ -110,8 +110,11 @@ const isEmailValid = computed(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 h-full w-full bg-black z-10 opacity-70"></div>
-  <div class="bg-white w-full sm:w-96 h-full fixed right-0 top-0 z-20 p-4 sm:p-6 overflow-y-auto">
+  <div id="zxc" class="fixed top-0 left-0 h-full w-full bg-black z-10 opacity-70"></div>
+  <div
+    id="zxc2"
+    class="bg-white w-full sm:w-96 h-full fixed right-0 top-0 z-20 p-4 sm:p-6 overflow-y-auto"
+  >
     <DrawerHead />
 
     <div v-if="cartEmpty || orderId" class="flex h-full items-center">
@@ -206,8 +209,10 @@ const isEmailValid = computed(() => {
 
         <!-- Добавленная подпись с ссылкой -->
         <p class="text-xs text-gray-500 text-center mt-2">
-          Нажимая кнопку "Подтвердить заказ", вы соглашаетесь с <br>
-          <a href="/privacy" class="text-lime-600 hover:underline">политикой обработки персональных данных</a>.
+          Нажимая кнопку "Подтвердить заказ", вы соглашаетесь с <br />
+          <a href="/privacy" class="text-lime-600 hover:underline"
+            >политикой обработки персональных данных</a
+          >.
         </p>
       </div>
 
@@ -229,5 +234,28 @@ const isEmailValid = computed(() => {
       </div>
     </div>
   </div>
-  <div></div>
 </template>
+
+<style scoped>
+#zxc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998; /* Ниже корзины, но выше всего остального */
+}
+
+#zxc2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px; /* Ширина корзины */
+  height: 100%;
+  background: white;
+  z-index: 9999; /* Выше всего */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+</style>
