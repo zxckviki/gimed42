@@ -26,7 +26,12 @@ const routes = [
     component: Privacy,
     meta: { title: 'Политика конфиденциальности | ООО "Гимед"' },
   },
-  { path: '/', name: 'Landing', component: Landing, meta: { title: 'Главная | ООО "Гимед"' } },
+  {
+    path: '/',
+    name: 'Landing',
+    component: Landing,
+    meta: { title: 'Главная | ООО "Гимед"', noLayout: true },
+  },
 ]
 
 const router = createRouter({
