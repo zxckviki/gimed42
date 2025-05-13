@@ -78,10 +78,22 @@ const handleKeyDown = (e) => {
       <!-- Название товара -->
       <h3 class="font-medium text-gray-900 truncate">{{ title }}</h3>
 
-      <!-- Блок с количеством и ценой -->
-      <div class="flex justify-between items-center mt-3 gap-2">
-        <!-- Количество -->
-        <div class="flex items-center gap-3">
+      <div class="flex justify-between items-baseline mt-2">
+        <!-- Цена за единицу -->
+        <span class="text-sm text-gray-500">
+          {{ price.toLocaleString('ru-RU', { useGrouping: false }) }} ₽/шт
+        </span>
+
+        <!-- Итоговая сумма -->
+        <span class="text-base font-semibold">
+          {{ (price * (item.quantity || 1)).toLocaleString('ru-RU') }} ₽
+        </span>
+      </div>
+
+      <!-- Блок с количеством -->
+      <div class="flex justify-between items-center mt-2 gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-gray-600 text-sm">Кол-во:</span>
           <input
             type="number"
             min="1"
@@ -94,17 +106,11 @@ const handleKeyDown = (e) => {
           />
         </div>
 
-        <!-- Сумма -->
-        <div class="text-base font-semibold whitespace-nowrap">
-          {{ (price * (item.quantity || 1)).toLocaleString('ru-RU') }} р.
-        </div>
-
         <!-- Кнопка удаления -->
         <button
           @click="handleRemove"
           class="p-1 text-gray-400 hover:text-red-500 transition-colors"
           aria-label="Удалить товар"
-          title="Удалить"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
