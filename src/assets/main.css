@@ -6,9 +6,20 @@ body:has(.main-layout) {
   background-color: rgb(191, 224, 207);
 }
 
+:root {
+  color-scheme: only light;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  background-color: white !important;
+  color: #333 !important;
+}
+
+body {
+  background-color: white !important;
+  color: #333 !important;
 }
 
 /* Дополнительные стили для кнопки "Наверх" */

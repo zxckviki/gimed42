@@ -32,6 +32,13 @@ export default defineConfig({
     }),
   ],
   base: '/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `:root { color-scheme: only light; }`,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
