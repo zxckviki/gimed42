@@ -13,7 +13,6 @@ body:has(.main-layout) {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
-  background-color: white !important;
   color: #333 !important;
 }
 
