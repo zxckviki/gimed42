@@ -152,88 +152,90 @@ watch(
 )
 
 watch(filters, fetchItems)
-
-
 </script>
 <template>
-  <div
-    id="nach"
-    class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8"
-  >
-    <h2 class="text-3xl md:text-4xl font-bold">Каталог продуктов</h2>
+  <main>
+    <div
+      id="nach"
+      class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold">Каталог продуктов</h2>
 
-    <!-- Измененная часть - теперь все фильтры одинаковой высоты -->
-    <div class="w-full md:w-auto">
-      <div class="grid grid-cols-1 min-[900px]:grid-cols-3 gap-2 items-end">
-        <!-- Категория товара -->
-        <div class="flex flex-col h-full">
-          <h4 class="text-sm md:text-base mb-1">Категория товара:</h4>
-          <select
-            @change="onChangeSelectCategory"
-            class="py-2 px-3 border rounded-md outline-none w-full h-[42px]"
-          >
-            <option value="">Любая</option>
-            <option value="Антисептики">Антисептики</option>
-            <option value="Дезинфицирующее средство">Дезинфицирующее средство</option>
-            <option value="Средства обработки мед. оборудования">
-              Средства обработки мед. оборудования
-            </option>
-            <option value="Средство для стирки">Средство для стирки</option>
-          </select>
-        </div>
+      <!-- Измененная часть - теперь все фильтры одинаковой высоты -->
+      <div class="w-full md:w-auto">
+        <div class="grid grid-cols-1 min-[900px]:grid-cols-3 gap-2 items-end">
+          <!-- Категория товара -->
+          <div class="flex flex-col h-full">
+            <h4 class="text-sm md:text-base mb-1">Категория товара:</h4>
+            <select
+              @change="onChangeSelectCategory"
+              class="py-2 px-3 border rounded-md outline-none w-full h-[42px]"
+            >
+              <option value="">Любая</option>
+              <option value="Антисептики">Антисептики</option>
+              <option value="Дезинфицирующее средство">Дезинфицирующее средство</option>
+              <option value="Средства обработки мед. оборудования">
+                Средства обработки мед. оборудования
+              </option>
+              <option value="Средство для стирки">Средство для стирки</option>
+            </select>
+          </div>
 
-        <!-- Сортировка -->
-        <div class="flex flex-col h-full">
-          <h4 class="text-sm md:text-base mb-1">Сортировка:</h4>
-          <select
-            @change="onChangeSelect"
-            class="py-2 px-3 border rounded-md outline-none w-full h-[42px]"
-          >
-            <option value="">Отсутствует</option>
-            <option value="title">По названию товара</option>
-            <option value="price">По возрастанию цены</option>
-            <option value="-price">По убыванию цены</option>
-          </select>
-        </div>
+          <!-- Сортировка -->
+          <div class="flex flex-col h-full">
+            <h4 class="text-sm md:text-base mb-1">Сортировка:</h4>
+            <select
+              @change="onChangeSelect"
+              class="py-2 px-3 border rounded-md outline-none w-full h-[42px]"
+            >
+              <option value="">Отсутствует</option>
+              <option value="title">По названию товара</option>
+              <option value="price">По возрастанию цены</option>
+              <option value="-price">По убыванию цены</option>
+            </select>
+          </div>
 
-        <!-- Поиск -->
-        <div class="flex flex-col h-full">
-          <h4 class="text-sm md:text-base mb-1">ㅤ</h4>
-          <div class="relative flex items-center h-[42px]">
-            <img class="absolute left-4 top-3" src="/search.svg" alt="Search" />
-            <input
-              @input="onChangeSelectInput"
-              class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 w-full h-full"
-              placeholder="Поиск..."
-            />
+          <!-- Поиск -->
+          <div class="flex flex-col h-full">
+            <h4 class="text-sm md:text-base mb-1">ㅤ</h4>
+            <div class="relative flex items-center h-[42px]">
+              <img class="absolute left-4 top-3" src="/search.svg" alt="Search" />
+              <input
+                @input="onChangeSelectInput"
+                class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 w-full h-full"
+                placeholder="Поиск..."
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="mt-6 md:mt-10">
-    <CardList v-if="items.length > 0" :items="items" @add-to-favorite="addToFavorite" @add-to-cart="onClickAddPlus" />
+    <div class="mt-6 md:mt-10">
+      <CardList
+        v-if="items.length > 0"
+        :items="items"
+        @add-to-favorite="addToFavorite"
+        @add-to-cart="onClickAddPlus"
+      />
 
-    <div v-else class="flex flex-col items-center justify-center py-20 text-gray-500">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-16 w-16 mb-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      <p class="text-xl font-medium">Нет товаров, соответствующих критериям поиска.</p>
-
+      <div v-else class="flex flex-col items-center justify-center py-20 text-gray-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-16 w-16 mb-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <p class="text-xl font-medium">Нет товаров, соответствующих критериям поиска.</p>
+      </div>
     </div>
-  </div>
-
-  <div></div>
+  </main>
 </template>

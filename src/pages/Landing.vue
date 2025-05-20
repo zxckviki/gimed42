@@ -477,7 +477,7 @@
               />
 
               <div
-                class="absolute bottom-4 sm:bottom-6 md:bottom-8 right-12 sm:right-6 md:right-8 transform translate-x-1/4 translate-y-1/4 w-1/2 sm:w-1/2 md:w-2/5"
+                class="absolute bottom-4 sm:bottom-10 md:bottom-8 right-12 sm:right-6 md:right-8 transform translate-x-1/4 translate-y-1/4 w-1/2 sm:w-1/2 md:w-2/5"
               >
                 <img
                   src="/site/guman3.jpeg"
@@ -615,7 +615,8 @@
         </div>
       </div>
     </section>
-
+  </main>
+  <footer>
     <section class="bg-[#181818] px-4 md:px-96">
       <div class="container mx-auto px-4">
         <div class="flex flex-col items-center gap-4 md:gap-6 text-[#bababa] text-base md:text-xl">
@@ -641,8 +642,7 @@
         </div>
       </div>
     </section>
-  </main>
-  <div></div>
+  </footer>
 </template>
 
 <script>

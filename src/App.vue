@@ -82,23 +82,27 @@ provide('cart', {
     </svg>
   </a>
   <template v-if="$route.path !== '/'">
-    <div class="main-layout">
-      <Drawer v-if="drawerOpen" :totalPrice="totalPrice" />
-      <div class="bg-white w-full md:w-4/5 m-auto rounded-xl shadow-xl mt-4 md:mt-14">
-        <Header :total-price="totalPrice" @open-drawer="openDrawer" />
+    <header>
+      <div class="main-layout">
+        <Drawer v-if="drawerOpen" :totalPrice="totalPrice" />
+        <div class="bg-white w-full md:w-4/5 m-auto rounded-xl shadow-xl mt-4 md:mt-14">
+          <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 
-        <div class="p-4 md:p-10 min-h-screen">
-          <router-view />
+          <div class="p-4 md:p-10 min-h-screen">
+            <router-view />
+          </div>
         </div>
       </div>
-    </div>
-    <section class="bg-[#181818] mt-2 py-2 px-4 md:px-96">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col items-center gap-6 text-[#bababa] text-sm md:text-xl">
-          <div class="flex justify-center w-max pb-2">© ООО "ГИМЕД", 2025</div>
+    </header>
+    <footer>
+      <section class="bg-[#181818] mt-2 py-2 px-4 md:px-96">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col items-center gap-6 text-[#bababa] text-sm md:text-xl">
+            <div class="flex justify-center w-max pb-2">© ООО "ГИМЕД", 2025</div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </footer>
   </template>
   <router-view v-else />
 </template>
