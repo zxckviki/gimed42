@@ -199,7 +199,7 @@ watch(filters, fetchItems)
           <div class="flex flex-col h-full">
             <h4 class="text-sm md:text-base mb-1">ㅤ</h4>
             <div class="relative flex items-center h-[42px]">
-              <img class="absolute left-4 top-3" src="/search.svg" alt="Search" />
+              <img class="absolute left-4 top-3" src="/search.svg" alt="Поиск" />
               <input
                 @input="onChangeSelectInput"
                 class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 w-full h-full"

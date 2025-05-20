@@ -23,7 +23,7 @@ const emit = defineEmits(['openDrawer'])
         <li
           class="flex items-center cursor-pointer gap-2 md:gap-3 text-gray-500 hover:text-black text-sm md:text-base"
         >
-          <img src="/home2.png" alt="Cart" class="w-4 h-4 md:w-5 md:h-5" />
+          <img src="/home2.png" alt="На главную" class="w-4 h-4 md:w-5 md:h-5" />
           <span>На главную</span>
         </li>
       </router-link>
@@ -31,9 +31,12 @@ const emit = defineEmits(['openDrawer'])
       <li
         v-if="$route.path !== '/privacy'"
         @click="() => emit('openDrawer')"
+        @keydown.enter="() => emit('openDrawer')"
+        tabindex="0"
+        role="button"
         class="flex items-center cursor-pointer gap-2 md:gap-3 text-gray-500 hover:text-black text-sm md:text-base"
       >
-        <img src="/cart.svg" alt="Cart" class="w-4 h-4 md:w-5 md:h-5" />
+        <img src="/cart.svg" alt="Корзина" class="w-4 h-4 md:w-5 md:h-5" />
         <b>{{ totalPrice.toLocaleString('ru-RU') }} руб.</b>
       </li>
 
@@ -41,7 +44,7 @@ const emit = defineEmits(['openDrawer'])
         <li
           class="flex items-center cursor-pointer gap-2 md:gap-3 text-gray-500 hover:text-black text-sm md:text-base"
         >
-          <img src="/katal2.png" alt="Cart" class="w-4 h-4 md:w-5 md:h-5" />
+          <img src="/katal2.png" alt="Каталог" class="w-4 h-4 md:w-5 md:h-5" />
           <span>Каталог</span>
         </li>
       </router-link>

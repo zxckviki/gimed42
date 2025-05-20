@@ -50,8 +50,12 @@ const localIsAdded = defineModel('isAdded', { default: false })
       <img
         v-if="onClickAdd"
         @click="onClickAdd"
+        @keydown.enter="onClickAdd"
+        @keydown.space="onClickAdd"
         :src="!localIsAdded ? '/plus.svg' : '/checked.svg'"
-        alt="Plus"
+        alt="Добавить в корзину"
+        tabindex="0"
+        role="button"
         class="flex items-center justify-center w-auto h-5/6"
       />
     </div>

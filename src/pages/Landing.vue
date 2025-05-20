@@ -93,6 +93,7 @@
           <div class="w-full lg:w-1/2 xl:w-3/5 order-2 lg:order-1">
             <img
               src="/site/sotrud.jpeg"
+              alt="Фото сотрудников"
               class="rounded-xl shadow-xl w-full h-auto object-cover max-w-[500px] mx-auto lg:max-w-none"
             />
           </div>
