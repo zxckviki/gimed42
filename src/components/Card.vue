@@ -35,12 +35,12 @@ const localIsAdded = defineModel('isAdded', { default: false })
     </div>
 
     <p class="mt-2 font-bold text-base md:text-lg">{{ title }}</p>
-    <p class="mt-2 text-slate-500 text-xs">{{ description }}</p>
+    <p class="mt-2 text-[#757575] text-xs">{{ description }}</p>
 
-    <p class="mt-1 text-slate-500 text-xs">{{ date }}</p>
-    <p class="mt-1 text-slate-500 text-xs">{{ release }}</p>
-    <p class="mt-1 text-slate-500 text-xs">{{ maker }}</p>
-    <p class="mt-1 text-slate-500 text-xs break-words text-justify">{{ manu }}</p>
+    <p class="mt-1 text-[#757575] text-xs">{{ date }}</p>
+    <p class="mt-1 text-[#757575] text-xs">{{ release }}</p>
+    <p class="mt-1 text-[#757575] text-xs">{{ maker }}</p>
+    <p class="mt-1 text-[#757575] text-xs break-words text-justify">{{ manu }}</p>
 
     <div id="zxc" class="flex justify-between items-center mt-auto pt-2">
       <div class="flex flex-col">
