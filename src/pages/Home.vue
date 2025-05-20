@@ -198,13 +198,20 @@ watch(filters, fetchItems)
           <!-- Поиск -->
           <div class="flex flex-col h-full">
             <h4 class="text-sm md:text-base mb-1">ㅤ</h4>
-            <div class="relative flex items-center h-[42px]">
-              <img class="absolute left-4 top-3" src="/search.svg" alt="Поиск" />
-              <input
-                @input="onChangeSelectInput"
-                class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 w-full h-full"
-                placeholder="Поиск..."
-              />
+            <div class="relative">
+              <label for="search-input" class="sr-only">Поиск товаров</label>
+              <div class="flex items-center h-[42px]">
+                <img class="absolute left-4 top-3" src="/search.svg" alt="" aria-hidden="true" />
+                <input
+                  id="search-input"
+                  type="search"
+                  @input="onChangeSelectInput"
+                  class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 w-full h-full"
+                  placeholder="Поиск..."
+                  aria-describedby="search-hint"
+                />
+              </div>
+              <span id="search-hint" class="sr-only">Введите название товара для поиска</span>
             </div>
           </div>
         </div>

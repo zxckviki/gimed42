@@ -141,8 +141,12 @@ const isEmailValid = computed(() => {
           <h3 class="text-lg font-semibold">Контактные данные</h3>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">ФИО</label>
+            <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">
+              ФИО
+              <span class="sr-only">Обязательное поле</span>
+            </label>
             <input
+              id="fullname"
               v-model="formData.name"
               @input="handleNameInput"
               type="text"
@@ -150,13 +154,21 @@ const isEmailValid = computed(() => {
               placeholder="Иванов Иван Иванович"
               required
               pattern="[А-Яа-яЁё\s]+"
-              title="Только русские буквы и пробелы"
+              aria-describedby="fullname-error"
+              aria-invalid="false"
             />
+            <div id="fullname-error" class="sr-only" aria-live="polite">
+              Только русские буквы и пробелы
+            </div>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+              Email
+              <span class="sr-only">Обязательное поле</span>
+            </label>
             <input
+              id="email"
               v-model="formData.email"
               @input="handleEmailInput"
               type="email"
@@ -165,16 +177,24 @@ const isEmailValid = computed(() => {
               placeholder="example@mail.com"
               required
               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-              title="Введите корректный email (должен содержать @ и точку после)"
+              aria-describedby="email-error"
+              :aria-invalid="formData.email && !isEmailValid ? 'true' : 'false'"
             />
-            <p v-if="formData.email && !isEmailValid" class="text-red-500 text-xs mt-1">
-              Пожалуйста, введите корректный email (должен содержать @ и домен)
-            </p>
+            <div id="email-error" class="text-red-500 text-xs mt-1" aria-live="assertive">
+              <span v-if="formData.email && !isEmailValid" class="sr-only">Ошибка: </span>
+              <span v-if="formData.email && !isEmailValid">
+                Пожалуйста, введите корректный email (должен содержать @ и домен)
+              </span>
+            </div>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+              Телефон
+              <span class="sr-only">Обязательное поле</span>
+            </label>
             <input
+              id="phone"
               v-model="formData.phone"
               @input="handlePhoneInput"
               type="tel"
@@ -183,9 +203,13 @@ const isEmailValid = computed(() => {
               required
               maxlength="18"
               pattern="^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$"
-              title="Введите 10 цифр номера после +7"
+              aria-describedby="phone-error"
+              :aria-invalid="formData.phone && !isPhoneValid ? 'true' : 'false'"
               style="color: #000"
             />
+            <div id="phone-error" class="sr-only" aria-live="polite">
+              Введите 10 цифр номера после +7
+            </div>
           </div>
         </div>
 
