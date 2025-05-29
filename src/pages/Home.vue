@@ -107,20 +107,14 @@ const fetchItems = async () => {
 
     console.log(params)
 
-    const currentState = {}
+    const currentAddedState = {}
     items.value.forEach((item) => {
-      currentState[item.id] = {
-        // isFavorite: item.isFavorite,
-        isAdded: item.isAdded,
-      }
+      currentAddedState[item.id] = item.isAdded
     })
 
     items.value = data.map((obj) => ({
       ...obj,
-      ...currentState[obj.id],
-      // isFavorite: currentState[obj.id]?.isFavorite || false,
-      // favoriteId: currentState[obj.id]?.favoriteId || null,
-      isAdded: currentState[obj.id]?.isAdded || false,
+      isAdded: currentAddedState[obj.id] || cart.value.some((cartItem) => cartItem.id === obj.id),
     }))
   } catch (err) {
     console.log(err)
