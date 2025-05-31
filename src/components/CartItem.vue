@@ -101,6 +101,7 @@ const handleKeyDown = (e) => {
             :value="item.quantity || 1"
             @input="handleQuantityChange"
             @blur="handleBlur"
+            @focus="$event.target.select()"
             @keydown="handleKeyDown"
             class="w-16 border border-gray-300 rounded-md py-1 px-2 text-center focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
