@@ -166,10 +166,10 @@ watch(filters, fetchItems)
               class="py-2 px-3 border rounded-md outline-none w-full h-[42px]"
             >
               <option value="">Любая</option>
-              <option value="Антисептики">Антисептики</option>
+              <option value="Антисептики">Антисептик</option>
               <option value="Дезинфицирующее средство">Дезинфицирующее средство</option>
               <option value="Средства обработки мед. оборудования">
-                Средства обработки мед. оборудования
+                Средство обработки мед. оборудования
               </option>
               <option value="Средство для стирки">Средство для стирки</option>
             </select>
