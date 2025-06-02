@@ -4,7 +4,7 @@
 
   <!-- Мобильное меню -->
   <header class="bg-[#212121] text-white w-full fixed top-0 z-40">
-    <div class="container mx-auto h-16 md:h-24 flex items-center justify-between px-4">
+    <div class="container mx-auto h-12 md:h-24 flex items-center justify-between px-4">
       <!-- Кнопка бургер меню для мобильных -->
       <button @click="toggleMenu" class="md:hidden text-white focus:outline-none" aria-label="Меню">
         <svg
